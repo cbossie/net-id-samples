@@ -72,7 +72,7 @@ namespace AspNetCoreTodo
         private void configureSqlLite(IServiceCollection services, string fileName)
         {
             var tempFolder = Path.GetTempPath();
-            var filePath = _env.ContentRootPath + @"\" + fileName;            
+            var filePath = Path.Join (_env.ContentRootPath, fileName);            
 
             var destinationPath = tempFolder + "test.sqlite.db";
             if(!File.Exists(destinationPath))
